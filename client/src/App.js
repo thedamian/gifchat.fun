@@ -84,7 +84,7 @@ function App() {
   return (
     <div className="app">
        <header>
-          <h1>GiphyChatty</h1>
+          <h1>Giphy Chat.fun</h1>
           <div className="user-bio">{Hello}
           <img src="https://avatars.dicebear.com/api/initials/damianmont.svg" alt="avatar" /></div>
        </header>
