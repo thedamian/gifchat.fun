@@ -40,7 +40,7 @@ function App() {
       return priorChat;
     })
    // socket.emit("chat message",handleMessage);
-  }, []);
+  }
 
   useEffect(() => {
     if (socket) {
