@@ -34,7 +34,7 @@ function App() {
       Hello = name ? `<span>Hello <strong>${name}</strong></span>` : '';
   },[name])
 
-  const handleMessage = useCallback((msg) => {
+  const handleMessage = (msg) => {
     setChat((priorChat) => {
       priorChat.push(msg);
       return priorChat;
@@ -66,8 +66,7 @@ function App() {
   }
 
   const handleTyping = (e) => {
-    const { name, value } = e.target;
-    setTypingMsg(value);
+    setTypingMsg(e.target.value);
   }
 
   const getGifs = (e) => {
