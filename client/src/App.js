@@ -19,7 +19,7 @@ function App() {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const newSocket = io(`http://${window.location.hostname}:8080`);
+    const newSocket = io(`http://${window.location.hostname}`);
     setSocket(newSocket);
     return () => newSocket.close();
   }, [setSocket]);
@@ -70,7 +70,7 @@ function App() {
 
   const getGifs = (e) => {
     e.preventDefault()
-    fetch("http://localhost:8080/giphy/"+encodeURI(typingMsg))
+    fetch("/giphy/"+encodeURI(typingMsg))
     .then(res=> res.json())
     .then(gifs => {
       console.log(gifs);
