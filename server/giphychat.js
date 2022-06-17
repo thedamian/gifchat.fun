@@ -53,6 +53,6 @@ io.on('connection', (socket) => {
 
 
 // start the web server.
-server.listen(8080, () => {
-    console.log('listening on *:8080');
+server.listen(5017, () => {
+    console.log('gifchat listening on *:5017');
   });
