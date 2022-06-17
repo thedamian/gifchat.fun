@@ -35,8 +35,10 @@ function App() {
   },[name])
 
   const handleMessage = useCallback((msg) => {
-    chat.push(msg);
-    setChat(chat)
+    setChat((priorChat) => {
+      priorChat.push(msg);
+      return priorChat;
+    })
    // socket.emit("chat message",handleMessage);
   }, []);
 
