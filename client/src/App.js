@@ -80,7 +80,7 @@ function App() {
 
   const getGifs = (e) => {
     e.preventDefault()
-    fetch("/giphy/"+encodeURI(typingMsg))
+    fetch(getDomain()+"/giphy/"+encodeURI(typingMsg))
     .then(res=> res.json())
     .then(gifs => {
       console.log(gifs);
