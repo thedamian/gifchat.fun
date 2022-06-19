@@ -17,9 +17,18 @@ function App() {
   const [gifs,setGifs] = useState([])
   const [name,setName] = useState("damians");
   const [socket, setSocket] = useState(null);
-
+ 
+  const getDomain = () => {
+   const domain = window.location.hostname;
+   if (domain == "localhost") {
+    return "http://localhost:8080"
+   } else {
+    return "https://" + window.location.hostname;
+   }
+}
+  
   useEffect(() => {
-    const newSocket = io(`https://${window.location.hostname}`);
+    const newSocket = io(getDomain());
     setSocket(newSocket);
     return () => newSocket.close();
   }, [setSocket]);
