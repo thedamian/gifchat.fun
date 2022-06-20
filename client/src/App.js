@@ -43,8 +43,6 @@ function App() {
     sendMessage(newMessage);
     setChooseGif(false);
     setTypingMsg("")
-    bottomRef.current?.scrollIntoView({behavior: 'smooth'});
-    // document.getElementById("typingThang").focus();
     typingRef.current?.focus();
   }
 
@@ -61,8 +59,12 @@ function App() {
       setGifs(gifs);
       setChooseGif(true);
     })
-    
   }
+
+  useEffect(()=> {
+    console.log("New message");
+    bottomRef.current?.scrollIntoView({behavior: 'smooth'});
+  },[messages])
 
   return (
     <div className="app">
@@ -79,8 +81,7 @@ function App() {
                    gifs.map(gif => <GifChoose key={gif} src={gif} handleChoice={handleChoice}/>)
                 :  messages.map(msg => <Chat key={msg.pic+msg.date} msg={msg} name={name} />)  
             }
-             <div className="dummy"></div>
-             <div ref={bottomRef} />
+             <div className="dummy"  ref={bottomRef}></div>
           </main>
           <form onSubmit={getGifs}>
             <input type="text" placeholder="Type a message..." ref={typingRef} id="typingThang" value={typingMsg}  onChange={handleTyping} /> <button type="submit"  disabled="">💥</button></form>
