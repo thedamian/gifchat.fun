@@ -5,7 +5,7 @@ const express = require("express"); // express library
 const cors = require('cors'); // cors middleware to have a great API experience
 const path = require("path"); // express has a method for using local path. but now.sh doesn't like it.
 const app = express(); // Express server (we seperate to introduce middleware) you could also do: app = require("express")()
-const port = process.env.PORT || 8080; // use any port you want or use a enviromental PORT variable
+const port = process.env.PORT || 5017; // use any port you want or use a enviromental PORT variable
 app.use(express.json()); // Now express no longer needs the body-parser middleware and has it's own.
 app.use(cors()); // For APIS this allows CORS access
 app.use(express.static(path.join(__dirname, "../client/build"))); // This is for static files. like CSS or Images etc.
@@ -53,6 +53,6 @@ io.on('connection', (socket) => {
 
 
 // start the web server.
-server.listen(5017, () => {
-    console.log('gifchat listening on *:5017');
+server.listen(port, () => {
+    console.log('gifchat listening on *:'+port);
   });
