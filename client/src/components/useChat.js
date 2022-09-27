@@ -17,7 +17,7 @@ const useChat = () => {
     }
  }
    const initMsg = {
-    pic: "https://media.giphy.com/media/WJjLyXCVvro2I/giphy-downsized.gif",
+    pic: "https://media.giphy.com/media/229Ozo6sMl3K69NgwE/giphy-downsized.gif",
     who: "noOne",
     type: "received"
   }
