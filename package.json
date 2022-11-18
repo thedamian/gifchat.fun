@@ -1,27 +1,29 @@
 {
-  "name": "giphychat.js",
+  "name": "GifChat.fun",
   "version": "1.0.0",
   "description": "",
-  "main": "giphychat.js",
+  "main": "gifchat.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
-    "dev": "nodemon ."
+    "build": "cd react-client && npm run build && cd ..",
+    "dev": "DEVELOPING=true && nodemon .",
+    "dev-react": "cd react-client && npm run start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thedamian/giphychat.git"
+    "url": "git+git@github.com:thedamian/gifchat.fun.git"
   },
   "keywords": [
-    "giphy",
+    "gif",
     "chat"
   ],
   "author": "Damian Montero",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thedamian/giphychat/issues"
+    "url": "https://github.com/thedamian/gifchat.fun/issues"
   },
-  "homepage": "https://github.com/thedamian/giphychat#readme",
+  "homepage": "https://github.com/thedamian/gifchat.fun#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",

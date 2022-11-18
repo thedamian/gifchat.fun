@@ -8,7 +8,7 @@ const app = express(); // Express server (we seperate to introduce middleware) y
 const port = process.env.PORT || 5017; // use any port you want or use a enviromental PORT variable
 app.use(express.json()); // Now express no longer needs the body-parser middleware and has it's own.
 app.use(cors()); // For APIS this allows CORS access
-app.use(express.static(path.join(__dirname, "../client/build"))); // This is for static files. like CSS or Images etc.
+app.use(express.static(path.join(__dirname, "react-client/build"))); // This is for static files. like CSS or Images etc.
 const giphyapi = process.env.GIPHYAPI;
 const giphyUrl = `https://api.giphy.com/v1/gifs/search?api_key=${giphyapi}&limit=5&offset=0&rating=g&lang=en&q=`;
 const { Server } = require("socket.io");
@@ -19,6 +19,12 @@ const io = new Server(server,{
       methods: ['GET', 'POST']
     }
   });
+
+if (process.env.DEVELOPING == "true") {
+  app.get("/", (req,res) => {
+    res.send('<html><body><iframe src="http://localhost:3000" style="margin:0;padding:0,width:100%;height:100%" /></body></html>')
+  }) 
+}
 
 app.get("/giphy/:search", async (req,res) => {
     searchStr = encodeURI(req.params.search);
