@@ -1,6 +1,10 @@
 # gifchat.fun
 
-Yes it's stupid. and YES it's fun
+Yes it's stupid. and YES it's fun!
+
+To get it running locally you'll need a <a href="https://developers.giphy.com/">Giphy API</a> and put that into a .env file. You have a .env.example file as an example.
+
+Then you'll need the /build directory from the front end so follow these instructions from the root of this repo
 
 
 ### How to run it locally:
