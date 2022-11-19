@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
-    "build": "",
+    "build": "mv dist2 dist",
     "build2": "cd react-client && npm run build",
     "dev": "DEVELOPING=true nodemon .",
     "dev-react": "cd react-client && npm run start"
