@@ -27,7 +27,7 @@ if (process.env.DEVELOPING == "true") {
 }
 
 app.get("test",(req,res)=> {
-  res.send("test successful")
+  res.send("test successful!!!")
 })
 
 app.get("/giphy/:search", async (req,res) => {
