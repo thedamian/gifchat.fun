@@ -4,7 +4,6 @@
   "description": "",
   "main": "gifchat.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node .",
     "build": "mv dist2 dist",
     "build2": "cd react-client && npm run build",
