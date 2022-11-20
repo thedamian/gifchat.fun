@@ -5,6 +5,7 @@
   "main": "gifchat.js",
   "scripts": {
     "start": "node .",
+    "test": "echo \"So long and thanks for the fish\" && exit 0",
     "build": "mv dist2 dist",
     "build2": "cd react-client && npm run build",
     "dev": "DEVELOPING=true nodemon .",
