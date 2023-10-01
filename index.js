@@ -1,17 +1,16 @@
-require('dotenv').config();
-const fetch = require("node-fetch")
-const http = require("http"); // standard http server
-const express = require("express"); // express library
-const cors = require('cors'); // cors middleware to have a great API experience
-const path = require("path"); // express has a method for using local path. but now.sh doesn't like it.
-const app = express(); // Express server (we seperate to introduce middleware) you could also do: app = require("express")()
+import 'dotenv/config'
+import express from "express" // express library
+import cors from 'cors'; // cors middleware to have a great API experience
+import path from "path"; // express has a method for using local path. but now.sh doesn't like it.
+import  { Server } from "socket.io";
+const app = express(); // Express server (we seperate to introduce middleware)
 const port = process.env.PORT || 5017; // use any port you want or use a enviromental PORT variable
 app.use(express.json()); // Now express no longer needs the body-parser middleware and has it's own.
 app.use(cors()); // For APIS this allows CORS access
 app.use(express.static(path.join(__dirname, "dist"))); // This is for static files. like CSS or Images etc.
 const giphyapi = process.env.GIPHYAPI;
 const giphyUrl = `https://api.giphy.com/v1/gifs/search?api_key=${giphyapi}&limit=5&offset=0&rating=g&lang=en&q=`;
-const { Server } = require("socket.io");
+
 let server = http.createServer(app);
 const io = new Server(server,{
     cors: {
@@ -67,4 +66,4 @@ io.on('connection', (socket) => {
 //     console.log('gifchat listening on *:'+port);
 //   });
 
-// module.exports = app;
+module.exports = app;
