@@ -2,9 +2,9 @@
   "name": "GifChat.fun",
   "version": "1.0.0",
   "description": "",
-  "main": "gifchat.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node .",
+    "start": "node index.js",
     "test": "echo \"So long and thanks for the fish\" && exit 0",
     "build": "mv dist2 dist",
     "build2": "cd react-client && npm run build",

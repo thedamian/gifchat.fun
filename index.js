@@ -62,9 +62,9 @@ io.on('connection', (socket) => {
   });
 
 
-// start the web server.
-server.listen(port, () => {
-    console.log('gifchat listening on *:'+port);
-  });
+// // start the web server.
+// server.listen(port, () => {
+//     console.log('gifchat listening on *:'+port);
+//   });
 
-module.exports = app;
+// module.exports = app;
