@@ -66,3 +66,5 @@ io.on('connection', (socket) => {
 server.listen(port, () => {
     console.log('gifchat listening on *:'+port);
   });
+
+module.exports = app;
