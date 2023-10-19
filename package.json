@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engines" : {"node":"18.x"},
   "scripts": {
     "start": "node index.js",
     "test": "echo \"So long and thanks for the fish\" && exit 0",
